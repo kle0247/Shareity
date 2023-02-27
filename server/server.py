@@ -6,9 +6,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    url = search_names('pets')
-    pdb.set_trace()
-    return url
+    return 'hello world'
+
+@app.route('/search/<term>')
+def search(term):
+    return search_names(term)
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
