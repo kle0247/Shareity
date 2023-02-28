@@ -1,8 +1,11 @@
 from flask import Flask
 from bll.searchNames import search_names
 import pdb
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/')
 def index():
